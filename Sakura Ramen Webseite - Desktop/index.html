@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sakura_Rahmen</title>
+    <title>Sakura Ramen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Economica:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
-        html {
-            scroll-behavior: smooth;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
             font-family: 'Raleway', sans-serif;
-            object-fit: cover;
+            color: #000;
         }
 
-        .menu {
-            position: absolute;
-            top: 64px;
-            right: 112px;
-            font-weight: 400;
-            font-size: 24px;
-        }
-
-        .flower {
-            position: absolute;
-            left: 112px;
-            top: 64px;
-        }
-
-        .menu a {
+        a {
             text-decoration: none;
-            font-weight: 600;
-            margin-left: 32px;
-            filter: drop-shadow(2px 6px 8px rgba(0, 0, 0, 0.5));
-            color: white;
+            color: inherit;
         }
 
-        img {
+        .hero-section {
+            position: relative;
             width: 100%;
-            max-width: 144%;
-            padding: 16px;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-section img.hero-bg {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .main-container {
-            background-color: rgba(0, 0, 0, 0.1);
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 500px;
-            color: white;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
+            align-items: center;
+            padding: 64px 112px;
+            color: white;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
-            overflow: hidden;
+        }
+
+        .flower {
+            width: 64px;
+            height: 64px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 32px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .menu a {
+            filter: drop-shadow(2px 6px 8px rgba(0, 0, 0, 0.5));
         }
 
         .telefon-button {
@@ -66,79 +83,44 @@
             color: white;
             border: 2px solid white;
             padding: 12px 20px;
-            font-size: 16px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .telefon-button .icon {
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .headline {
-            font-family: 'Raleway' sans-serif;
-            font-weight: bold;
             font-size: 96px;
-            margin-top: 350px;
+            font-weight: bold;
+            margin-top: 200px;
+            text-align: center;
         }
 
         .subheadline {
-            font-family: 'Raleway', sans-serif;
             font-size: 24px;
-            margin-top: 0;
-        }
-
-        .sub-headline {
-            font-family: 'Raleway', sans-serif;
-            font-size: 24px;
-            margin-top: 0;
-            color: #000000;
-        }
-
-        .googlemaps {
-            margin-top: 64px;
-            height: 350px;
-            width: 100%;
+            text-align: center;
+            margin-top: 8px;
         }
 
         .section {
+            padding: 120px 160px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-weight: bold;
-            color: #9F0908;
+        }
+
+        h2 {
             font-size: 80px;
-            object-fit: cover;
-        }
-
-        .section h1 {
-            margin-bottom: 20px;
-        }
-
-        .section img {
-            width: 150px;
-            margin-top: 64px;
-            object-fit: cover;
-        }
-
-        .section-find-us {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-weight: bold;
             color: #9F0908;
-            font-size: 80px;
-            object-fit: cover;
+            font-weight: bold;
+            margin-bottom: 64px;
+            text-align: center;
         }
+
 
         .image-row {
             display: flex;
-            justify-content: center;
-            gap: 400px;
-            margin-top: 64px;
+            gap: 300px;
             flex-wrap: wrap;
         }
 
@@ -146,7 +128,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 160px;
+            width: 128px;
         }
 
         .image-item img {
@@ -156,226 +138,299 @@
 
         .image-item p {
             margin-top: 16px;
-            text-align: center;
+            font-family: 'Economica', sans-serif;
             font-size: 56px;
-            color: #000;
-            font-family: "Economica", sans-serif;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .section-menu {
-            position: relative;
-            width: 100%;
-            min-height: 600px;
-        }
-
-        .section-menu .background {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        .menu-text {
-            position: absolute;
-            top: 120px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #9F0908;
-            font-size: 48px;
             font-weight: bold;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-            z-index: 2;
         }
 
-        .menu-images {
+        .menu-section {
+            padding: 120px 160px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 120px;
-            margin-top: 64px;
-
+            position: relative;
+            overflow: hidden;
         }
 
-        .menu-row {
+
+        .menu-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: auto;
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .menu-section>*:not(.menu-bg-image) {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 120px;
+        }
+
+        .menu-item {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 56px;
-
         }
 
-        .menu-row img {
+        .menu-item.left {
+            justify-content: flex-start;
+            margin-left: -550px;
+        }
+
+        .menu-item.right {
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+            margin-right: -550px;
+        }
+
+        .menu-item img {
             width: 352px;
             height: 352px;
             object-fit: cover;
         }
 
-        .row-left {
-            justify-content: flex-start;
-            margin-left: -750px;
-        }
-
-        .row-right {
-            flex-direction: row-reverse;
-            margin-right: -750px;
-        }
-
-        .description {
-            max-width: 300px;
-            font-family: "Economica", sans-serif;
-            font-weight: 700;
-            font-style: normal;
+        .menu-description {
+            font-family: 'Economica', sans-serif;
             font-size: 56px;
-            color: #000000;
+            font-weight: bold;
+            color: #000;
+            max-width: 650px;
         }
 
         .menu-table {
+            margin-top: 16px;
             display: flex;
-            justify-content: space-between;
-            max-width: 400px;
-            padding: 4px 0;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 32px;
             font-weight: bold;
             color: #675E54;
-            font-size: 32px;
         }
 
-        .container {
-            padding-left: 100px;
-            padding-right: 100px;
-            margin-top: 24px;
+        .menu-table div {
+            display: flex;
+            justify-content: start;
+            gap: 40px;
+        }
+
+        .findus-section {
+            padding: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .findus-section h2 {
+            margin-bottom: 8px;
+        }
+
+
+
+        .menu-table td:first-child {
+            padding-right: 200px;
+        }
+
+
+        .sub-headline {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 24px;
+            margin-top: 8px;
+        }
+
+        .googlemaps {
+            margin-top: 64px;
+            height: 350px;
+            width: 100%;
+            border: none;
+
         }
 
         .footer {
-            background: rgb(35, 38, 41);
+            background-color: #0A141E;
             color: white;
-            padding: 44px;
             display: flex;
             justify-content: space-between;
-
+            align-items: center;
+            padding: 44px 160px;
+            margin-top: 8px;
+            gap: 8px;
         }
 
-        h2,
-        h1 {
-            margin-bottom: 4px;
-        }
-
-        a:hover {
-            text-decoration: underline;
+        .footer img.social-icon {
+            width: 40px;
+            height: 40px;
+            margin-left: 16px;
         }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Economica:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <div class="hero-section">
-        <img src="./assets/img/1_hero/JPG/hero_bg.jpg" alt="Bild" style="width: 100%; height: auto;">
-    </div>
-    <div class="main-container">
-        <img class="flower" src="./assets/img/1_hero/PNG/sakura_logo.png" alt="Blume"
-            style="width: 64px; height: 64px;">
-
-        <div class="menu">
-            <a href="#contact">MENU</a>
-            <a href="#contact">LOCATIONS</a>
-            <a href="#adress">ABOUT</a>
-            <a href="tel:0176 54564534" class="telefon-button">
-                <i class="fas fa-phone"></i> 0176 54564534
-            </a>
+        <a href="#">
+            <img src="./assets/img/1_hero/JPG/hero_bg.jpg" alt="Bild" class="hero-bg">
+        </a>
+        <div class="main-container">
+            <div class="top-bar">
+                <a href="#">
+                    <img class="flower" src="./assets/img/1_hero/PNG/sakura_logo.png" alt="Blume">
+                </a>
+                <div class="menu">
+                    <a href="#menu">MENU</a>
+                    <a href="#locations">LOCATIONS</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="tel:017654564534" class="telefon-button">
+                        <i class="fas fa-phone"></i> 0176 54564534
+                    </a>
+                </div>
+            </div>
+            <h1 class="headline">SAKURA RAMEN</h1>
+            <p class="subheadline">THE BEST RAMEN IN TOWN</p>
         </div>
-        <h1 class="headline">SAKURA RAMEN</h1>
-        <p class="subheadline">The Best Ramen in Town</p>
     </div>
 
-    <div class="section">
-        <h1>HOW TO ORDER</h1>
+    <div class="section" id="howto">
+        <h2>HOW TO ORDER</h2>
         <div class="image-row">
             <div class="image-item">
-                <img src="./assets/img/2_section_how_to_order/PNG/broth.png" alt="broth">
+                <a href="#">
+                    <img src="./assets/img/2_section_how_to_order/PNG/broth.png" alt="broth">
+                </a>
                 <p>Pick your<br>broth</p>
             </div>
             <div class="image-item">
-                <img src="./assets/img/2_section_how_to_order/PNG/noodle.png" alt="noodle">
+                <a href="#">
+                    <img src="./assets/img/2_section_how_to_order/PNG/noodle.png" alt="noodle">
+                </a>
                 <p>Pick your<br>noodle</p>
             </div>
             <div class="image-item">
-                <img src="./assets/img/2_section_how_to_order/PNG/egg.png" alt="egg">
+                <a href="#">
+                    <img src="./assets/img/2_section_how_to_order/PNG/egg.png" alt="egg">
+                </a>
                 <p>Add your<br>toppings</p>
             </div>
         </div>
     </div>
 
-    <div class="section-menu">
-        <img class="background" src="./assets/img/3_section_our_menu/JPG/section_our_menu_bg.jpg" alt="our_menu">
-        <div class="menu-text">
-            <h1>OUR MENU</h1>
+    <div class="menu-section section" id="menu">
+        <img class="menu-bg-image" src="./assets/img/3_section_our_menu/JPG/section_our_menu_bg.jpg">
+        <h2>OUR MENU</h2>
+        <div class="menu-list">
+            <div class="menu-item left">
+                <a href="#">
+                    <img src="./assets/img/3_section_our_menu/Png/R1.png" alt="Tonkotsu Ramen">
+                </a>
+                <div class="menu-description">
+                    <h3>Tonkotsu Ramen</h3>
+                    <table class="menu-table">
+                        <table class="menu-table">
+                            <table class="menu-table">
+                                <tr>
+                                    <td>CHICKEN</td>
+                                    <td>11.95€</td>
+                                </tr>
+                                <tr>
+                                    <td>BEEF</td>
+                                    <td>12.95€</td>
+                                </tr>
+                                <tr>
+                                    <td>SHRIMP</td>
+                                    <td>13.95€</td>
+                                </tr>
+                            </table>
+                </div>
+            </div>
 
-
-            <div class="menu-images">
-                <div class="menu-row row-left">
-                    <img src="./assets/img/3_section_our_menu/Png/R1.png" alt="r1">
-                    <div class="description">
-                        <h2>Tonkotsu Ramen</h2>
-                        <div class="menu-table"><span>CHICKEN</span><span>11.95€</span></div>
-                        <div class="menu-table"><span>BEEF</span><span>12.95€</span></div>
-                        <div class="menu-table"><span>SHRIMP</span><span>13.95€</span></div>
+            <div class="menu-item right">
+                <a href="#">
+                    <img src="./assets/img/3_section_our_menu/Png/R2.png" alt="Spicy Miso Ramen">
+                </a>
+                <div class="menu-description">
+                    <h3>Spicy Miso Ramen</h3>
+                    <div class="menu-table">
+                        <table class="menu-table">
+                            <tr>
+                                <td>CHICKEN</td>
+                                <td>11.95€</td>
+                            </tr>
+                            <tr>
+                                <td>BEEF</td>
+                                <td>12.95€</td>
+                            </tr>
+                            <tr>
+                                <td>SHRIMP</td>
+                                <td>13.95€</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
+            </div>
 
-                <div class="menu-row row-right">
-                    <img src="./assets/img/3_section_our_menu/Png/R2.png" alt="r2">
-                    <div class="description">
-                        <h2>Spicy Miso Ramen</h2>
-                        <div class="menu-table"><span>CHICKEN</span><span>11.95€</span></div>
-                        <div class="menu-table"><span>BEEF</span><span>12.95€</span></div>
-                        <div class="menu-table"><span>SHRIMP</span><span>13.95€</span></div>
-                    </div>
-                </div>
-
-                <div class="menu-row row-left">
-                    <img src="./assets/img/3_section_our_menu/Png/R3.png" alt="r3">
-                    <div class="description">
-                        <h2>Shio Ramen</h2>
-                        <div class="menu-table"><span>CHICKEN</span><span>11.95€</span></div>
-                        <div class="menu-table"><span>BEEF</span><span>12.95€</span></div>
-                        <div class="menu-table"><span>SHRIMP</span><span>13.95€</span></div>
+            <div class="menu-item left">
+                <a href="#">
+                    <img src="./assets/img/3_section_our_menu/Png/R3.png" alt="Shio Ramen">
+                </a>
+                <div class="menu-description">
+                    <h3>Shio Ramen</h3>
+                    <div class="menu-table">
+                        <table class="menu-table">
+                            <tr>
+                                <td>CHICKEN</td>
+                                <td>11.95€</td>
+                            </tr>
+                            <tr>
+                                <td>BEEF</td>
+                                <td>12.95€</td>
+                            </tr>
+                            <tr>
+                                <td>SHRIMP</td>
+                                <td>13.95€</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="section-find-us" id="LOCATIONS">
-        <h1 class="headline">FIND US AT</h1>
 
-        <!-- NEU: Adresse + Marker in einer Zeile -->
-        <div class="sub-headline" style="display: flex; align-items: center;">
-            <img src="./assets/img/4_section_find_us_at/PNG/map_marker.png"
-                style="width: 24px; height: 24px; margin-right: 6px;">
-            <span>Kapuzinerstraße 31, München, 80337</span> <br>
+    <div class="findus-section" id="locations">
+        <h2>FIND US AT</h2>
+        <div class="sub-headline">
+            <img src="./assets/img/4_section_find_us_at/PNG/map_marker.png" style="width: 25px; height: 25px;">
+            <span>Kapuzinerstraße 31, München, 80337</span>
         </div>
         <iframe class="googlemaps"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2663.210995698633!2d11.558694776814725!3d48.12545425200456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479ddf44cf7e4d5f%3A0x55a7bd29a73e9161!2sKapuzinerstra%C3%9Fe%2031%2C%2080337%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1752926614864!5m2!1sde!2sde"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
-    <div class="container footer">
+    <footer class="footer">
+        <img src="./assets/img/5_section_footer/PNG/sakura_ramen_logo_and_text.png" alt="footer" style="height: 44px;">
         <div>
-            <img src="./assets/img/5_section_footer/PNG/sakura_ramen_logo_and_text.png" alt="footer"
-                style="height: 44px;">
+            <a href="https://www.tripadvisor.com/" target="_blank" rel="noopener">
+                <img src="./assets/img/5_section_footer/PNG/tripadvisor_logo.png" class="social-icon" alt="Tripadvisor">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                <img src="./assets/img/5_section_footer/PNG/facebook_logo.png" class="social-icon" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                <img src="./assets/img/5_section_footer/PNG/instagrram_logo.png" class="social-icon" alt="Instagram">
+            </a>
         </div>
-        <div>
-            <img src="./assets/img/5_section_footer/PNG/tripadvisor_logo.png" style="width: 40px; height: 40px;">
-            <img src="./assets/img/5_section_footer/PNG/facebook_logo.png" style="width: 40px; height: 40px;">
-            <img src="./assets/img/5_section_footer/PNG/instagrram_logo.png" style="width: 40px; height: 40px;">
-        </div>
-    </div>
-
+    </footer>
 </body>
 
 </html>
