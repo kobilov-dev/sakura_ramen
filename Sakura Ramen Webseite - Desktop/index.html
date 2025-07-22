@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -69,10 +73,16 @@
 
         .menu {
             display: flex;
+            align-items: center;
             gap: 32px;
             font-size: 24px;
             font-weight: 600;
         }
+
+        .menu a:not(.telefon-button):hover {
+            color: #ff6b6b;
+        }
+
 
         .menu a {
             filter: drop-shadow(2px 6px 8px rgba(0, 0, 0, 0.5));
@@ -81,10 +91,11 @@
         .telefon-button {
             background-color: red;
             color: white;
-            border: 2px solid white;
-            padding: 12px 20px;
-            display: inline-flex;
+            padding: 10px;
+            display: flex;
             align-items: center;
+            height: 100%;
+            border-radius: 8px;
             gap: 10px;
             font-size: 16px;
         }
@@ -120,7 +131,7 @@
 
         .image-row {
             display: flex;
-            gap: 300px;
+            gap: 350px;
             flex-wrap: wrap;
         }
 
@@ -129,18 +140,21 @@
             flex-direction: column;
             align-items: center;
             width: 128px;
+            text-align: center;
         }
 
         .image-item img {
             width: 100%;
             height: auto;
+            display: block;
         }
 
         .image-item p {
             margin-top: 16px;
             font-family: 'Economica', sans-serif;
-            font-size: 56px;
+            font-size: 40px;
             font-weight: bold;
+            line-height: 1.2;
         }
 
         .menu-section {
@@ -225,7 +239,7 @@
         }
 
         .findus-section {
-            padding: 120px;
+            margin-top: 120px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -266,8 +280,8 @@
             align-items: center;
             padding: 44px 160px;
             margin-top: 8px;
-            gap: 8px;
         }
+
 
         .footer img.social-icon {
             width: 40px;
@@ -307,22 +321,34 @@
             <div class="image-item">
                 <a href="#">
                     <img src="./assets/img/2_section_how_to_order/PNG/broth.png" alt="broth">
+                    <p>
+                        <span>Pick your</span><br>
+                        <span>broth</span>
+                    </p>
                 </a>
-                <p>Pick your<br>broth</p>
             </div>
+
             <div class="image-item">
                 <a href="#">
                     <img src="./assets/img/2_section_how_to_order/PNG/noodle.png" alt="noodle">
+                    <p>
+                        <span>Pick your</span><br>
+                        <span>noodle</span>
+                    </p>
                 </a>
-                <p>Pick your<br>noodle</p>
             </div>
+
             <div class="image-item">
                 <a href="#">
                     <img src="./assets/img/2_section_how_to_order/PNG/egg.png" alt="egg">
+                    <p>
+                        <span>Add your</span><br>
+                        <span>toppings</span>
+                    </p>
                 </a>
-                <p>Add your<br>toppings</p>
             </div>
         </div>
+
     </div>
 
     <div class="menu-section section" id="menu">
@@ -417,20 +443,25 @@
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
-    <footer class="footer">
-        <img src="./assets/img/5_section_footer/PNG/sakura_ramen_logo_and_text.png" alt="footer" style="height: 44px;">
-        <div>
-            <a href="https://www.tripadvisor.com/" target="_blank" rel="noopener">
-                <img src="./assets/img/5_section_footer/PNG/tripadvisor_logo.png" class="social-icon" alt="Tripadvisor">
-            </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener">
-                <img src="./assets/img/5_section_footer/PNG/facebook_logo.png" class="social-icon" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener">
-                <img src="./assets/img/5_section_footer/PNG/instagrram_logo.png" class="social-icon" alt="Instagram">
-            </a>
-        </div>
-    </footer>
+    <div class="footer-wrapper">
+        <footer class="footer">
+            <img src="./assets/img/5_section_footer/PNG/sakura_ramen_logo_and_text.png" alt="footer"
+                style="height: 44px;">
+            <div>
+                <a href="https://www.tripadvisor.com/" target="_blank" rel="noopener">
+                    <img src="./assets/img/5_section_footer/PNG/tripadvisor_logo.png" class="social-icon"
+                        alt="Tripadvisor">
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                    <img src="./assets/img/5_section_footer/PNG/facebook_logo.png" class="social-icon" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                    <img src="./assets/img/5_section_footer/PNG/instagrram_logo.png" class="social-icon"
+                        alt="Instagram">
+                </a>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
